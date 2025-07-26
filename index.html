@@ -15,7 +15,7 @@
             color: #e5e5e5;
             min-height: 100vh;
             transition: padding-left 0.3s ease;
-            padding-left: 12px; 
+            padding-left: 12px;
         }
 
         .header-font {
@@ -81,11 +81,11 @@
         }
 
             nav:hover {
-                width: 480px; 
+                width: 320px;
             }
 
                 nav:hover ~ #content {
-                    padding-left: 480px; 
+                    padding-left: 320px;
                 }
 
         .nav-border {
@@ -104,16 +104,27 @@
         }
 
         .nav-content {
-            width: 64px;
+            width: 100%;
             padding: 1rem;
             opacity: 0;
             transition: opacity 0.3s ease;
             pointer-events: none;
+            text-align: center;
         }
 
         nav:hover .nav-content {
             opacity: 1;
             pointer-events: auto;
+        }
+
+        .nav-content ul li {
+            display: block;
+        }
+
+        .nav-content a {
+            white-space: nowrap;
+            display: block;
+            width: 100%;
         }
     </style>
 </head>
@@ -122,13 +133,13 @@
     <nav>
         <div class="nav-border"></div>
         <div class="nav-content">
-            <h3 class="header-font text-xl text-amber-200 mb-4">Оглавление</h3>
+            <h3 class="header-font text-xl text-amber-200 mb-4 text-center">Оглавление</h3>
             <ul class="space-y-2">
                 <li><a href="#header" class="text-amber-100 hover:text-amber-300">Введение</a></li>
                 <li><a href="#island" class="text-amber-100 hover:text-amber-300">Остров Скорби</a></li>
                 <li>
                     <a href="#locations" class="text-amber-100 hover:text-amber-300">Локации</a>
-                    <ul class="ml-4 mt-1 space-y-1">
+                    <ul class="mt-1 space-y-1">
                         <li><a href="#beach" class="text-gray-300 hover:text-amber-200">Берег Разбитых Кораблей</a></li>
                         <li><a href="#city" class="text-gray-300 hover:text-amber-200">Нижний Город</a></li>
                         <li><a href="#burrow" class="text-gray-300 hover:text-amber-200">Нора</a></li>
@@ -318,7 +329,7 @@
                     </div>
 
                     <!-- Мармеладные Топи -->
-                    <div id ="marshes" class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                    <div id="marshes" class="bg-gray-800 p-6 rounded-lg shadow-lg">
                         <h3 class="header-font text-2xl text-amber-200 mb-4">4. Мармеладные Топи</h3>
                         <p class="text-gray-300 italic mb-4">"Огромное, зловонное болото. Вместо воды — бурая, пузырящаяся жижа с приторно-сладким запахом брожения..."</p>
                         <div class="grid md:grid-cols-2 gap-6">
@@ -370,7 +381,7 @@
                     </div>
 
                     <!-- Каменная Дума -->
-                    <div id ="duma"class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                    <div id="duma" class="bg-gray-800 p-6 rounded-lg shadow-lg">
                         <h3 class="header-font text-2xl text-amber-200 mb-4">6. Каменная Дума</h3>
                         <p class="text-gray-300 italic mb-4">"Холодная, неприступная цитадель Инквизиции. Здесь нет хаоса, только ледяной, бездушный порядок..."</p>
                         <div class="grid md:grid-cols-2 gap-6">
