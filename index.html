@@ -9,6 +9,11 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=MedievalSharp&family=Merriweather:wght@300;400;700&display=swap');
 
+        /* Добавлено для плавной прокрутки */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Merriweather', serif;
             background-color: #0a0a0a;
@@ -78,7 +83,6 @@
             background-color: #1a120b;
             z-index: 50;
             overflow: hidden;
-            /* Изменения для вертикального центрирования */
             display: flex;
             align-items: center;
         }
@@ -576,5 +580,32 @@
             </div>
         </footer>
     </div>
+
+    <!-- Добавленный скрипт для прокрутки к центру -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Находим все якорные ссылки внутри навигации
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    // 1. Отменяем стандартное поведение ссылки
+                    e.preventDefault();
+
+                    // 2. Получаем ID целевого элемента из атрибута href
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    // 3. Если элемент найден, плавно прокручиваем к нему
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth', // плавная анимация
+                            block: 'center'     // выравнивание по центру экрана
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
